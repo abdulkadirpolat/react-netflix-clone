@@ -1,0 +1,5 @@
+.footer-container {
+  @apply h-64 w-full mt-5 sticky z-10 py-7 text-sm;
+  background-color: rgba(0,0,0,.75);
+  color: #757575;
+}
