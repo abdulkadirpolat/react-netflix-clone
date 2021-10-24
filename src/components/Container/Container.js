@@ -1,11 +1,16 @@
 import React from "react";
 
-function Container({ children, props }) {
+const Container = ({ children, className, ...props }) => {
   return (
-    <div {...props} className="min-h-screen bg-gray-500 w-full">
+    <div
+      {...props}
+      className={`${
+        className ? className : ""
+      } ${"relative min-h-screen bg-black w-full overflow-hidden"}`}
+    >
       {children ? children : ""}
     </div>
   );
-}
+};
 
 export default Container;

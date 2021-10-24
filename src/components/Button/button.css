@@ -1,0 +1,18 @@
+.btn {
+    @apply p-4 mt-6 mb-3 rounded w-full text-white leading-4 font-bold select-none border-none whitespace-nowrap ;
+}
+.btn:hover {
+    @apply cursor-pointer;
+}
+.btn.primary {
+    @apply bg-blue-600;
+}
+.btn.neutral {
+    background-color:#303030 ;
+}
+.btn.secondary {
+    background-color: #6d6d6eb3;
+}
+.btn.red {
+    @apply bg-nx-red ;
+}

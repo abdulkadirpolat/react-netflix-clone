@@ -1,7 +1,7 @@
 import React from 'react'
 
-function BillBoardAnimation({className, ...props}) {
-    console.log(props)
+const BillBoardAnimation =({className, ...props})=> {
+
     return (
         <div className= { className} {...props} >
             bilboard

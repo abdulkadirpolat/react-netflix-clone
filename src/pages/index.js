@@ -1,2 +1,5 @@
 export {default as Login} from "../pages/login/Login"
+export {default as Logout} from "../pages/logout/Logout"
 export {default as Browse} from "../pages/browse/Browse"
+export {default as YourAccount} from "../pages/yourAccount/YourAccount"
+export {default as Error} from "../pages/error/Error"

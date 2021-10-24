@@ -1,13 +1,8 @@
-.input_container {
-@apply pb-4 flex-col;
-}
-
 .input_checkbox {
     @apply transform scale-125 mr-1 ; 
 }
 
 .input {
-  @apply  w-full px-5 rounded-md h-12 outline-none ;
-    background: #333;
+  @apply  w-full px-5 rounded-smm h-12 outline-none bg-nx-gray-700;
 }
 /* text-gray-300   bg-white appearance-none w-3 h-3 rounded-sm cursor-pointer */

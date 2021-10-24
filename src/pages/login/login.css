@@ -1,38 +1,22 @@
 .login-container {
-    @apply relative min-h-screen  ;
     background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/9b3267c9-5086-4550-92f1-eddc22a1f78e/8a0b0cf6-c8c9-4e6a-9f50-bd325ea0ed27/TR-tr-20211004-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-    overflow: hidden;
-    
+background-repeat: no-repeat;
+background-size: cover;
   }
   .login-container::after {
-    position: absolute;
+    @apply absolute top-0 left-0 w-full h-full z-0 mdmin-3:bg-opac-200 bg-black;
     content: " ";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-color: rgba(0, 0, 0, 0.541);
   }
- 
-.more-color {
-  color: #0071eb;  
-}
-.google-link-color {
-  color: #0080ff;
-}
-.more-color:hover {
- @apply   hover:underline
-}
 
-.form-body-color {
-    background-color: rgba(0,0,0,.75);
-}
+  .login-body::before {
+    content: "";
+     @apply h-h-91 mdmin-3:block hidden;
+  }
+  .login-body::after {
+    content: "";
+     @apply h-60 mdmin-3:block hidden;
+  }
+
 .local-select{
-  border: 1px solid #333;
   width: 130px;
-}
-.global-icon{
-  color: rgb(153 153 153);
-  top: 30%;
 }

@@ -1,39 +1,77 @@
-import React from "react";
+import React,{forwardRef} from "react";
+import PropTypes from "prop-types"
 import styles from "./input.module.css";
-const Input = ({
+
+const errorMessageSwitch = (errorType) => {
+  console.log(errorType)
+  switch (errorType) {
+    case "required":
+      return "This field is required.";
+    case "maxLength":
+      return "Your password must contain between 4 and 60 characters.";
+    case "minLength":
+      return "Your password must contain between 4 and 60 characters.";
+
+    default:
+      return "Error";
+  }
+};
+
+const Input =  forwardRef(({
   className,
   placeholder,
   type,
   id,
   children,
   label,
-  props,
-}) => {
+  onChange,
+  value,
+  error,
+  ...props
+},ref ) => {
   return (
-    <div
+    <div 
       className={`flex ${
-        label ? " flex-row content-center justify-between" : styles.input_container
+        label ? " flex-row content-center justify-between" : " pb-4 flex-col"
       }`}
     >
       <div>
         <input
+        ref= {ref}
+        onChange={onChange}
+        value= {value}
           id={id ? id : ""}
-          className={`${className ? className : ""} ${
-            label ? styles.input_checkbox :   `${styles.input}`  
-          }  `}
+          className={`${className ? className : ""} ${error ? "border-b-2 border-solid border-nx-yellow" : ""} ${
+            label ? styles.input_checkbox : `${styles.input}`  
+          }`}
           type={type}
           placeholder={placeholder ? placeholder : ""}
           {...props}
         />
         {label ? (
-          <label className="text-gray-400" htmlFor={id}>{label}</label>
+          <label className="text-nx-gray-200" htmlFor={id}>{label}</label>
         ) : (
-          <div className="text-">error message</div>
+       error ? <div className="text-nx-yellow">{errorMessageSwitch(error.type)} </div> : null 
         )}
       </div>
       {children ? children : null}
     </div>
   );
+})
+
+Input.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  type: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};
+
+Input.defaultProps = {
+  placeholder: "Input",
+  error: false,
 };
 
 export default Input;

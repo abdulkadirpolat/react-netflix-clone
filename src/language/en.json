@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Sign In"
+  },
+  "input": {
+    "placeholders": {
+      "email": "Email or phone number",
+      "password": "Password"
+    },
+    "label": {
+      "checkbox": "Remember me"
+    }
+  },
+  "buttons": {
+    "signIn": "Sign In"
+  }
+}

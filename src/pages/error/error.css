@@ -1,0 +1,15 @@
+.error-container {
+    background-image: url("https://assets.nflxext.com/ffe/siteui/pages/errors/bg-lost-in-space.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+  }
+
+  .error-content::before {
+    content: "";
+   @apply max-h-1/4 flex-1 flex;
+  }
+  .error-content::after {
+    content: "";
+    @apply max-h-1/4 flex-1 flex;
+  }

@@ -1,11 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "./button.css"
 
-function Button({ className, children, props }) {
+const Button = ({ className, children, label, onClick, ...props }) => {
   return (
-    <button className={`${className ? className : ""}  p-4 mt-6 mb-3 rounded-md bg-red-700 w-full text-white leading-4 font-bold select-none`} {...props}>
-      {children ? children : Button}
+    <button onClick= {onClick} className={`btn ${className}`} {...props}>
+      {children ? children : label}
     </button>
   );
-}
+};
+
+Button.propTypes = {
+  label: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired
+};
+
+Button.defaultProps = {
+  label: "Login",
+  className: "red",
+};
 
 export default Button;

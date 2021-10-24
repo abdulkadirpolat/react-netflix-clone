@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Oturum Aç"
+  },
+  "input": {
+    "placeholders": {
+      "email": "E‑posta veya telefon numarası",
+      "password": "Parola"
+    },
+    "label": {
+      "checkbox": "Beni hatırla"
+    }
+  },
+  "buttons": {
+    "signIn": "Oturum Aç"
+  }
+}
