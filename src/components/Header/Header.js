@@ -5,7 +5,7 @@ const Header =({ className, children, singUpHeader, ...props }) => {
     <header
       className={`${
         className ? className : ""
-      } ${`top-0 left-0 right-0 w-full h-h-91 z-20 flex items-center justify-between mdm-2:h-h-75 mdmin-3:absolute ${singUpHeader ? "border border-b" : "" }`}  `}
+      } ${`w-full h-h-91 z-20 flex items-center justify-between mdm-2:h-h-75 ${!singUpHeader ? "top-0 left-0 right-0 mdmin-3:absolute" : ""} ${singUpHeader ? "border-b border-nx-gray-50" : "" }`}  `}
       {...props}
     > 
        <Link
@@ -17,7 +17,7 @@ const Header =({ className, children, singUpHeader, ...props }) => {
             alt="Netflix Logo"
           />
         </Link>
-      {singUpHeader ? <Link to="/login" className="hover:underline mx-m-1">Oturum Aç</Link> : null}
+      {singUpHeader ? <Link to="/login" className="hover:underline mx-m-1 font-semibold text-lg text-nx-gray-700 tracking-wide">Oturum Aç</Link> : null}
       { children ? children : ""}
     </header>
   );

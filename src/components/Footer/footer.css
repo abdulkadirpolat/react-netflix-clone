@@ -1,4 +1,7 @@
 .footer-container {
-  @apply w-full mdmin-3:mt-5 mdmin-3:border-t-0 mdmin-3:border-nx-gray-500 
-  sticky z-10 py-7 text-sm text-nx-gray-600 bg-opac-100 mdmin-3:border-none border-t border-nx-gray-500;
+  @apply w-full mdmin-3:mt-5 mdmin-3:border-nx-gray-500 
+  sticky z-10 py-7 text-sm text-nx-gray-600 bg-opac-100 border-t border-nx-gray-500;
+}
+.footer-container-singup {
+  @apply bg-gray-50 border-t border-nx-gray-60 pb-4 ;
 }

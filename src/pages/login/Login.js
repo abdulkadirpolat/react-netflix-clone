@@ -2,78 +2,45 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button, Footer, Input, Header, Container } from "../../components";
-import { IoGlobe } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import "./login.css";
-import i18n from "../../i18n";
-// import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth"
-// const auth = getAuth();
+
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+const auth = getAuth();
 
 function Login() {
   const [googlePrivacy, setGooglePrivacy] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const [lang, setLang] = useState("");
-  // const [login, setLogin] = useState({})
+  const [errorCode, setErrorCode] = useState(null);
+
   const { t: translate } = useTranslation();
-  console.log(password)
- 
- 
-  
+
   const {
     register,
     formState: { errors },
     handleSubmit,
+    setValue,
   } = useForm();
-  
-  // const errorValidating = {
-    //   required: true,
-    //   maxLength: 60,
-    //   minLength: 4,
-    // };
-    
-    const submitForm = (data) => {
-      console.log(data)
-      const id = "C" + new Date().getTime();
-      login(id, data.email, data.password);
-    };
-    
-    const login = (id, email, password) => {
-      if (!email == "" && !password == "") {
-        const user = { id, email, password };
 
-//           createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential)=> {
-//     console.log(userCredential)
-//   })
-  
-//  signInWithEmailAndPassword(auth, email, password)
-//  .then(( userCredential)=> {
-//    const user = userCredential.user;
-//    console.log(user)
-//  })
-//  .catch((error)=> {
-//    const errorCode = error.code;
-//    const errorMessage = error.message;
-//  })
-        
+  const submitForm = (data) => {
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
         setUser(user);
-        localStorage.setItem("user_information", JSON.stringify(user));
-      }
-    };
-    
-    function handleChangeLanguage(lang) {
-      if (lang.target.value) setLang(lang.target.value);
-      i18n.changeLanguage(lang.target.value);
-    }
-    
-    // xl-md:text-100 md-sm:text-200  smm:text-300
-    // if (user) return <Redirect to="/browse" />;
-    return (
-      <Container className={"login-container"}>
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        // const errorMessage = error.message;
+        setErrorCode(errorCode);
+        // console.log("errorMessage", errorMessage);
+      });
+  };
+
+  if (user) return <Redirect to="/browse" />;
+  return (
+    <Container className={"login-container"}>
       <Header />
- 
+
       {/* mdmin-3:pt-24 mdm-2:pt-24 */}
       <div className="login-body text-gray-500 sticky z-10 text-sm mdmin-3:min-h-screen mdmin-3:-mb-64">
         <div className="mdmin-3:px-1/20  px-0 ">
@@ -83,12 +50,23 @@ function Login() {
                 <h1 className="mb-7 font-bold text-3xl text-white">
                   {translate("login.title")}
                 </h1>
+                {errorCode ? (
+                  <div className="mb-4 px-5 py-2.5 text-white bg-nx-yellow rounded leading-4">
+                    Bu e‑posta adresi ile bağlantılı bir hesap bulamadık. Lütfen
+                    yeniden deneyin ya da{" "}
+                    <Link className="underline" to="/">
+                      yeni bir hesap oluşturun.
+                    </Link>
+                  </div>
+                ) : null}
                 <form onSubmit={handleSubmit(submitForm)}>
                   <Input
                     type="email"
                     className="text-white"
                     placeholder={translate("input.placeholders.email")}
-                    onChange={(e) => setEmail(e.target.value.trim())}
+                    onChange={(event, { name, value }) => {
+                      setValue(name, value);
+                    }}
                     {...register("email", { required: true })}
                     error={errors.email}
                   />
@@ -96,7 +74,9 @@ function Login() {
                     type="password"
                     className="text-white"
                     placeholder={translate("input.placeholders.password")}
-                    onChange={(e) => setPassword(e.target.value.trim())}
+                    onChange={(event, { name, value }) => {
+                      setValue(name, value);
+                    }}
                     {...register("password", {
                       required: true,
                       maxLength: 60,
@@ -172,44 +152,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <Footer className="flex flex-col">
-        <div className="mb-8 text-base">
-          Sorularınız mı var?{" "}
-          <span className="hover:underline cursor-pointer ">0850-390-7444</span>{" "}
-          numaralı telefonu arayın
-        </div>
-        <ul className="h-full flex flex-wrap text-f13">
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3 pr-3 mb-4 hover:underline cursor-pointer ">
-            SSS
-          </li>
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3  pr-3 mb-4 hover:underline cursor-pointer ">
-            Yardım Merkezi
-          </li>
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3  pr-3 mb-4 hover:underline cursor-pointer ">
-            Kullanım Koşulları
-          </li>
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3  pr-3 mb-4 hover:underline cursor-pointer ">
-            Gizlilik
-          </li>
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3  pr-3 mb-4 hover:underline cursor-pointer ">
-            Çerez Tercihleri
-          </li>
-          <li className="min-w-m100 w-1/4 smm2:w-1/2 mdm-3:w-1/3  pr-3 mb-4 hover:underline cursor-pointer ">
-            Kurumsal Bilgiler
-          </li>
-        </ul>
-        <div className="mb-5 text-sm bg-black local-select rounded-sm relative border-nx-gray-700 border border-solid">
-          <select
-            onChange={handleChangeLanguage}
-            value={lang ? lang : "en"}
-            className=" py-4 pl-12 w-32 bg-black "
-          >
-            <option value="tr">Türkçe</option>
-            <option value="en">English</option>
-          </select>
-          <IoGlobe className="absolute left-3 text-lg top-t30 text-nx-gray-300" />
-        </div>
-      </Footer>
+      <Footer mainFooter />
     </Container>
   );
 }

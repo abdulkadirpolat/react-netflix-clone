@@ -1,8 +1,20 @@
 .input_checkbox {
     @apply transform scale-125 mr-1 ; 
 }
-
+.input_checkbox_signup {
+  @apply mr-4;
+}
 .input {
   @apply  w-full px-5 rounded-smm h-12 outline-none bg-nx-gray-700;
 }
-/* text-gray-300   bg-white appearance-none w-3 h-3 rounded-sm cursor-pointer */
+
+.input_outline {
+  @apply bg-white border border-nx-gray-400 focus:border-nx-lkblue h-h-60;
+}
+
+.input_outline.validated {
+@apply border-nx-green border;
+}
+.input_outline.error {
+  @apply border-nx-red border;
+}
