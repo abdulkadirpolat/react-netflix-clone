@@ -1,6 +1,8 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import {useTranslation } from "react-i18next"
 const Header =({ className, children, singUpHeader, ...props }) => {
+  const {t: translate } = useTranslation()
   return (
     <header
       className={`${
@@ -17,7 +19,7 @@ const Header =({ className, children, singUpHeader, ...props }) => {
             alt="Netflix Logo"
           />
         </Link>
-      {singUpHeader ? <Link to="/login" className="hover:underline mx-m-1 font-semibold text-lg text-nx-gray-700 tracking-wide">Oturum Aç</Link> : null}
+      {singUpHeader ? <Link to="/login" className="hover:underline mx-m-1 font-semibold text-lg text-nx-gray-700 tracking-wide">{translate("signup.registration.header.link")}</Link> : null}
       { children ? children : ""}
     </header>
   );

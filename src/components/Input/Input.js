@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import styles from "./input.module.css";
 
 const errorMessageSwitch = (errorType) => {
-  console.log(errorType);
   switch (errorType) {
     case "required":
       return "This field is required.";
@@ -31,6 +30,7 @@ const Input = forwardRef(
       error,
       outline,
       signup,
+      height,
       ...props
     },
     ref
@@ -43,6 +43,7 @@ const Input = forwardRef(
       >
         <div>
           <input
+          style= {{height: `${height}` }}
             ref={ref}
             onChange={onChange}
             value={value}

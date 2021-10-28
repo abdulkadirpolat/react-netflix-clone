@@ -1,0 +1,10 @@
+.logout-container {
+    background-image: url("https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+  }
+
+  .logout-body::before {
+    content: "";
+     @apply h-28 mdmin-3:block hidden;
+  }

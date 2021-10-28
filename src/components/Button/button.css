@@ -1,5 +1,8 @@
 .btn {
-    @apply p-4 mt-6 mb-3 rounded w-full text-white leading-4 font-bold select-none border-none whitespace-nowrap ;
+    @apply h-12 rounded text-white leading-4 font-bold select-none border-none whitespace-nowrap ;
+}
+.btn.small {
+    @apply p-2 max-h-8 rounded w-full text-white leading-4 font-normal select-none border-none whitespace-nowrap ;
 }
 .btn:hover {
     @apply cursor-pointer;

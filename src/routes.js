@@ -1,13 +1,12 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import { Login, Logout, Browse, YourAccount, Error } from "./pages/index";
- import { SignUp, Registration, Regform } from "./pages/signup/index"
+import {Home, Login, Logout, Browse, YourAccount, Error } from "./pages/index";
+ import { Registration, Regform } from "./pages/signup/index"
 function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={AppMountPoint} />
-        <Route path="/signup" exact component={SignUp}/>
+        <Route path="/" exact component={Home} />
         <Route path="/signup/registration" exact component={Registration}/>
         <Route path="/signup/regform" exact component={Regform}/>
         <Route path="/login" component={Login} />
@@ -23,10 +22,6 @@ function Routes() {
     </Router>
   );
 }
-
-const AppMountPoint = () => {
-  return <div>AppMountPoint</div>;
-};
 
 const Help = () => {
   return <div>help</div>;

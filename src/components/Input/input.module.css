@@ -5,11 +5,11 @@
   @apply mr-4;
 }
 .input {
-  @apply  w-full px-5 rounded-smm h-12 outline-none bg-nx-gray-700;
+  @apply  w-full px-5 h-12 outline-none bg-nx-gray-700;
 }
 
 .input_outline {
-  @apply bg-white border border-nx-gray-400 focus:border-nx-lkblue h-h-60;
+  @apply bg-white border border-nx-gray-400 focus:border-nx-lkblue;
 }
 
 .input_outline.validated {

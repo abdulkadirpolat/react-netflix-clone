@@ -6,17 +6,7 @@ import "./error.css"
 function Error() {
   return (
     <Container className="error-container text-xl">
-      <Header className="mdm-2:h-h-75 max-h-16 mdmin-3:absolute block bg-black">
-        <Link
-          to="/"
-          className="mdmin-3:ml-14 ml-m-1 h-h-25 flex cursor-pointer"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png"
-            alt="Netflix Logo"
-          />
-        </Link>
-      </Header>
+      <Header className="mdm-2:h-h-75 max-h-16 mdmin-3:absolute block bg-black"/>
       <div className="pt-20 text-white error-content min-h-screen flex flex-col relative">
          <div className="flex flex-col items-center text-center h-full flex-2 w-1/2 mx-auto">
 

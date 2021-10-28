@@ -14,8 +14,10 @@ module.exports = {
         "h-41": "41px",
         "h-25": "25px",
         "h-60": "60px",
+        "h-70": "70px",
         "h-75": "75px",
         "h-91": "91px",
+        "61": "245px",
       },
       padding: {
         "1/25": "4%",
@@ -29,11 +31,15 @@ module.exports = {
         smm: "4px",
       },
       minWidth: {
+        m74: "74px",
         m100: "100px",
         m380: "380px",
+        m450: "450px",
+        m500: "500px",
       },
       maxWidth: {
         mw: "450px",
+        mw500: "500px",
         "5xl-1": "1000px",
       },
       minHeight: {
@@ -42,6 +48,11 @@ module.exports = {
         h2: "660px",
         h3: "550px",
         h4: "515px",
+        mh40: "40px",
+        mh50: "50px",
+        mh60: "60px",
+        mh70: "70px",
+        
       },
       maxHeight: {
         0: "0",
@@ -49,6 +60,7 @@ module.exports = {
         "1/2": "50%",
         "3/4": "75%",
         full: "100%",
+        "3xl": "720px",
       },
       fontSize: {
         100: ".85vw",
@@ -61,6 +73,7 @@ module.exports = {
           lkblue: "#0071eb",
           glblue: "#0080ff",
           red: "#e50914",
+          "red-2": "#FE0C18",
           "gray-10": "#f3f3f3",
           "gray-50": "#e6e6e6",
           "gray-60": "#e5e5e5",
@@ -95,6 +108,9 @@ module.exports = {
 
         "2xlmin-2": { min: "1500px" },
         // => @media (min-width: 1500px) { ... }
+
+        "2xlmin-3": { min: "1450px" },
+        // => @media (min-width: 1450px) { ... }
 
         xlm: { max: "1280px" },
         // => @media (max-width: 1280px) { ... }
@@ -137,6 +153,7 @@ module.exports = {
 
         smin: { min: "480px" },
         // => @media (min-width: 480px) { ... }
+        "2xl-lg": { min: "950px", max: "1449px" },
 
         "xl-md": { min: "841px", max: "1280px" },
 

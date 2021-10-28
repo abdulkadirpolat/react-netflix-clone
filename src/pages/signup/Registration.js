@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Header, Footer, Button } from "../../components";
+import { useTranslation } from "react-i18next"
 
 function Registration() {
+  const {t: translate } = useTranslation()
   return (
     <Container className="bg-white flex flex-col min-h-full">
       <Header singUpHeader />
@@ -16,21 +18,21 @@ function Registration() {
             />
           </div>
           <div className="max-w-xs mx-auto text-center">
-            <span className="text-f13">ADIM 1 / 2</span>
+            <span className="text-f13">{translate("signup.registration.reg-container.step")}</span>
             <div className="text-2xl font-semibold pb-3">
-              Hesabınızın kurulumunu tamamlayın
+            {translate("signup.registration.reg-container.title")}
             </div>
             <div>
-              Netflix sizin için kişiselleştirilir. İstediğiniz zaman,
-              istediğiniz cihazda izlemek için bir parola oluşturun.
+            {translate("signup.registration.reg-container.text")}
             </div>
             <Link to="/signup/regform">
-              <Button>İleri</Button>
+              <Button className="mt-6 mb-3 red w-full">{translate("signup.registration.reg-container.button")}</Button>
             </Link>
           </div>
         </div>
       </div>
       <Footer
+      footerItems={translate("login.footer.footer-links", {returnObjects: true})}
         mainFooter
         signUpFooter
         className="footer-container-singup mb-0"

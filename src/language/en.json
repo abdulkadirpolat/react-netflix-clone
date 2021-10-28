@@ -1,17 +1,203 @@
 {
-  "login": {
-    "title": "Sign In"
-  },
-  "input": {
-    "placeholders": {
-      "email": "Email or phone number",
-      "password": "Password"
+  "home": {
+    "navbar-btn": "Sign In",
+    "top-story-card": {
+      "title": "Unlimited movies, TV shows, and more.",
+      "subtitle": "Watch anywhere. Cancel anytime.",
+      "text": "Ready to watch? Enter your email to create or restart your membership.",
+      "input": {
+        "placeholder": "Email address"
+      },
+      "button": {
+        "label": "Get Started"
+      }
     },
-    "label": {
-      "checkbox": "Remember me"
+    "story-cards": [
+      {
+        "title": "Enjoy on your TV.",
+        "text": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
+      },
+      {
+        "title": "Download your shows to watch offline.",
+        "text": "Save your favorites easily and always have something to watch."
+      },
+      {
+        "title": "Watch everywhere.",
+        "text": "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more."
+      },
+      {
+        "title": "Create profiles for kids.",
+        "text": "Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
+      }
+    ],
+    "bottom-story-card": {
+      "title": "Frequently Asked Questions",
+      "list-items": [
+        {
+          "title": "What is Netflix?",
+          "text": "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.   You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There's always something new to discover and new TV shows and movies are added every week!"
+        },
+        {
+          "title": "How much does Netflix cost?",
+          "text": "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from 26.99 TL to 54.99 TL a month. No extra costs, no contracts."
+        },
+        {
+          "title": "Where can I watch?",
+          "text": "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.    You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere."
+        },
+        {
+          "title": "How do I cancel?",
+          "text": "Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime."
+        },
+        {
+          "title": "What can I watch on Netflix?",
+          "text": "Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want."
+        },
+        {
+          "title": "Is Netflix good for kids?",
+          "text": "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.   Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see."
+        }
+      ]
+    },
+    "footer": {
+      "footer-top": "Questions? Call 0850-390-7444",
+      "footer-links": [
+        "FAQ",
+        "Help Center",
+        "Account",
+        "Media Center",
+        "Investor Relations",
+        "Jobs",
+        "Redeem Gift Cards",
+        "Ways to Watch",
+        "Terms of Use",
+        "Privacy",
+        "Cookie Preferences",
+        "Corporate Information",
+        "Contact Us",
+        "Speed Test",
+        "Legal Notices",
+        "Only on Netflix"
+      ]
     }
   },
-  "buttons": {
-    "signIn": "Sign In"
+  "login": {
+    "title": "Sign In",
+    "login-help": "Need help?",
+    "input": {
+      "placeholders": {
+        "email": "Email or phone number",
+        "password": "Password"
+      },
+      "label": {
+        "checkbox": "Remember me"
+      },
+      "errors": {
+        "auth/wrong-password": "Incorrect password. Please try again or you can ",
+        "auth/user-not-found": "Sorry, we can't find an account with this email address. Please try again or ",
+        "reset password": "reset your password.",
+        "new account": "create a new account."
+      }
+    },
+    "buttons": {
+      "signIn": "Sign In"
+    },
+    "login-form": {
+      "facebook": "Login with Facebook",
+      "login-signup": "New to Netflix?",
+      "login-signup-now": "Sign up now.",
+      "recaptcha": "This page is protected by Google reCAPTCHA to ensure you're not a bot.",
+      "recaptcha-btn": "Learn more.",
+      "recaptcha-text": {
+        "1": "The information collected by Google reCAPTCHA is subject to the Google ",
+        "2": "Privacy Policy ",
+        "3": "and ",
+        "4": "Terms of Service",
+        "5": ", and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google)."
+      }
+    },
+    "footer": {
+      "footer-top": {
+        "call": "Questions? Call ",
+        "call2": "null"
+      },
+      "footer-links": [
+        "FAQ",
+        "Help Center",
+        "Terms of Use",
+        "Privacy",
+        "Cookie Preferences",
+        "Corporate Information"
+      ]
+    }
+  },
+  "signup": {
+    "registration": {
+      "header": {
+        "link": "Sign In"
+      },
+      "reg-container": {
+        "step": "STEP 1 OF 2",
+        "title": "Finish setting up your account",
+        "text": "Netflix is personalized for you. Create a password to watch on any device at any time.",
+        "button": "Next"
+      }
+    },
+    "regform": {
+      "header": {
+        "link": "Sign In"
+      },
+      "reg-container": {
+        "step": "STEP 2 OF 2",
+        "title": "Create a password to start your membership",
+        "text": "Just a few more steps and you're done! We hate paperwork, too.",
+        "input": {
+          "placeholder": {
+            "email": "Email",
+            "password": "Add a password"
+          },
+          "checkbox": "Please do not email me Netflix special offers."
+        },
+        "button": "Create Account"
+      }
+    }
+  },
+  "browse": {
+    "footer": {
+      "footer-top": {
+        "call": "Questions? Call ",
+        "call2": "null"
+      },
+      "footer-links": [
+        "FAQ",
+        "Help Center",
+        "Terms of Use",
+        "Privacy",
+        "Cookie Preferences",
+        "Corporate Information"
+      ]
+    }
+  },
+  "logout": {
+    "logout-container": {
+      "title": "Leaving So Soon?",
+      "text": "Just so you know, you don’t always need to sign out of Netflix. It’s only necessary if you’re on a shared or public computer. ",
+      "text2": "You’ll be redirected to Netflix.com in 30 seconds.",
+      "button": "Go Now"
+    },
+    "footer": {
+      "footer-top": {
+        "call": "Questions? Call ",
+        "call2": "null"
+      },
+      "footer-links": [
+        "FAQ",
+        "Help Center",
+        "Terms of Use",
+        "Privacy",
+        "Cookie Preferences",
+        "Corporate Information"
+      ]
+    }
   }
 }

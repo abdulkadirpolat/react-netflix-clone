@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header, Container, Footer, Button, Input } from "../../components";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useTranslation} from "react-i18next"
 const auth = getAuth();
 
 function Regform() {
   const [user, setUser] = useState(null);
+  const {t: translate} = useTranslation()
 
   const {
     register,
@@ -20,6 +22,9 @@ function Regform() {
   const handleClick = () => {
     if (user) history.push("/login");
   };
+  useEffect(() => {
+    if (user) history.push("/login");
+  }, [user])
 
   const submitForm = (data) => {
     createUserWithEmailAndPassword(auth, data.email, data.password).then(
@@ -36,18 +41,19 @@ function Regform() {
       <div className="w-full pb-24">
         <div className="max-w-screen-lg mx-auto mt-0 mb-4 py-8 pr-5 pl-15">
           <div className="max-w-md mx-auto ">
-            <span className="text-f13">ADIM 2 / 2</span>
+            <span className="text-f13">{translate("signup.regform.reg-container.step")}</span>
             <div className="text-2xl font-semibold pb-3">
-              Üyeliğinizi başlatmak için bir parola oluşturun
+            {translate("signup.regform.reg-container.title")}
             </div>
             <div className="mb-2">
-              Sadece birkaç adım daha kaldı, sonra bitiyor! Biz de formaliteyi
-              hiç sevmiyoruz.
+            {translate("signup.regform.reg-container.text")}
             </div>
             <form onSubmit={handleSubmit(submitForm)}>
               <Input
+              height="60px"
+              className="rounded-smm "
                 type="email"
-                placeholder="E-posta"
+                placeholder={translate("signup.regform.reg-container.input.placeholder.email")}
                 outline
                 onChange={(event, { name, value }) => {
                   setValue(name, value);
@@ -56,8 +62,10 @@ function Regform() {
                 error={errors.email}
               />
               <Input
+               height="60px"
+                className="rounded-smm "
                 type="password"
-                placeholder="Bir parola ekleyin"
+                placeholder={translate("signup.regform.reg-container.input.placeholder.password")}
                 outline
                 onChange={(event, { name, value }) => {
                   setValue(name, value);
@@ -72,16 +80,17 @@ function Regform() {
               <Input
                 signup
                 type="checkbox"
-                label="Netflix özel teklifleri e‑posta ile gönderilmesin."
+                label={translate("signup.regform.reg-container.input.checkbox")}
                 id="emailPreference"
                 className="w-7 h-7 ml-1"
               />
-              <Button onClick={handleClick}>Hesap oluştur</Button>
+              <Button className="mt-6 mb-3 red w-full" onClick={handleClick}>{translate("signup.regform.reg-container.button")}</Button>
             </form>
           </div>
         </div>
       </div>
       <Footer
+       footerItems={translate("login.footer.footer-links", {returnObjects: true})}
         mainFooter
         signUpFooter
         className="footer-container-singup mb-0"

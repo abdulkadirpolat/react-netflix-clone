@@ -134,7 +134,7 @@ function Browse() {
       </Navbar>
       <BillboardAnimation className="min-h-h2" />
       <BillboardAnimation className="min-h-h2" />
-      <Footer />
+      <Footer  />
     </Container>
   );
 }

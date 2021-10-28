@@ -1,17 +1,203 @@
 {
-  "login": {
-    "title": "Oturum Aç"
-  },
-  "input": {
-    "placeholders": {
-      "email": "E‑posta veya telefon numarası",
-      "password": "Parola"
+  "home": {
+    "navbar-btn": "Oturum Aç",
+    "top-story-card": {
+      "title": "Sınırsız film, dizi ve çok daha fazlası.",
+      "subtitle": "İstediğiniz yerde izleyin. İstediğiniz zaman iptal edin.",
+      "text": "İzlemeye hazır mısınız? Üyelik oluşturmak veya üyeliğinize erişmek için e‑posta adresinizi girin.",
+      "input": {
+        "placeholder": "E-posta adresi"
+      },
+      "button": {
+        "label": "Başlayın"
+      }
     },
-    "label": {
-      "checkbox": "Beni hatırla"
+    "story-cards": [
+      {
+        "title": "Televizyonunuzda izleyebilirsiniz.",
+        "text": "Akıllı TV, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray oynatıcılar ve daha fazlasında seyredin."
+      },
+      {
+        "title": "Çevrimdışı izlemek için içerikleri indirin.",
+        "text": "En sevdiğiniz içerikleri kolayca kaydedin ve her zaman izleyecek bir şeyleriniz olsun."
+      },
+      {
+        "title": "İstediğiniz her yerde izleyin.",
+        "text": "Ekstra ücret ödemeden telefonda, tablette, bilgisayarda, televizyonda sınırsız film ve dizi izleyin."
+      },
+      {
+        "title": "Çocuklarınız için profiller oluşturun.",
+        "text": "Üyeliğinize dâhil olan bu ücretsiz deneyim sayesinde çocuklarınız, sadece onlara özel bir alanda en sevdikleri karakterlerle maceralara atılabilir."
+      }
+    ],
+    "bottom-story-card": {
+      "title": "Sıkça Sorulan Sorular",
+      "list-items": [
+        {
+          "title": "Netflix nedir?",
+          "text": "Netflix; internet bağlantılı binlerce cihazda ödüllü diziler, filmler, animeler, belgeseller ve daha fazlasını içeren geniş bir arşiv sunan bir yayın hizmetidir.    Tek bir reklam olmadan, istediğiniz kadar, istediğiniz zaman izleyebilirsiniz - hepsi aylık düşük bir ücret karşılığında. Her zaman keşfedilecek yeni bir şeyler var, üstelik her hafta yeni diziler ve filmler ekleniyor!"
+        },
+        {
+          "title": "Netflix'in maliyeti nedir?",
+          "text": "Netflix'i akıllı telefonunuz, tabletiniz, Akıllı TV'niz, dizüstü bilgisayarınız veya yayın cihazınızda sabit bir aylık ücretle izleyin. Aylık plan ücretleri 26,99 TL ile 54,99 TL arasında değişmektedir. Ekstra maliyet yok, sözleşme yok."
+        },
+        {
+          "title": "Nerede izleyebilirim?",
+          "text": "İstediğiniz yerde, istediğiniz zaman izleyin. Bilgisayarınızda netflix.com adresinden veya akıllı TV'ler, akıllı telefonlar, tabletler, medya oynatıcılar ve oyun konsolları dahil Netflix uygulamasını sunan, internet bağlantılı herhangi bir cihazda anında izlemek için Netflix hesabınızla oturum açın.     Favori içeriklerinizi iOS, Android veya Windows 10 uygulamasıyla da indirebilirsiniz. Seyahatteyken ve internet bağlantısı olmadan izlemek için indirilenleri kullanın. Netflix'i her yere beraberinizde götürün."
+        },
+        {
+          "title": "Nasıl iptal ederim?",
+          "text": "Netflix esnektir. Sinir bozucu hiçbir sözleşme ve taahhüt yoktur. Hesabınızı çevrimiçi olarak iki tıklamayla kolayca iptal edebilirsiniz. İptal ücreti yoktur - hesabınızı istediğiniz zaman başlatın veya durdurun."
+        },
+        {
+          "title": "Netflix'te ne izleyebilirim?",
+          "text": "Netflix, uzun metrajlı filmler, belgeseller, diziler ve programlar, anime, ödüllü Netflix orijinal içerikleri ve daha fazlasından oluşan kapsamlı bir kütüphaneye sahiptir. İstediğiniz her zaman, istediğiniz kadar çok şey izleyin."
+        },
+        {
+          "title": "Netflix çocuklar için uygun mudur?",
+          "text": "Üyeliğinize dâhil olan Netflix Çocuk deneyimi, çocukların ailece izlenebilecek dizi ve filmleri kendilerine özel bir alanda izlemelerini sağlarken kontrolü ebeveynlere verir.  Çocuk profillerinde bulunan PIN korumalı ebeveyn kontrolleri sayesinde, çocukların izleyebileceği içeriklerin yetişkinlik düzeylerini kısıtlayabilir ve onların görmesini istemediğiniz belirli içerikleri engelleyebilirsiniz."
+        }
+      ]
+    },
+    "footer": {
+      "footer-top": "Sorularınız mı var? 0850-390-7444 numaralı telefonu arayın",
+      "footer-links": [
+        "SSS",
+        "Yardım Merkezi",
+        "Hesap",
+        "Medya Merkezi",
+        "Yatırımcı İlişkileri",
+        "İş İmkanları",
+        "Hediye Kartı Kullan",
+        "İzleme Yolları",
+        "Kullanım Koşulları",
+        "Gizlilik",
+        "Çerez Tercihleri",
+        "Kurumsal Bilgiler",
+        "Bize Ulaşın",
+        "Hız Testi",
+        "Yasal Hükümler",
+        "Sadece Netflix'te"
+      ]
     }
   },
-  "buttons": {
-    "signIn": "Oturum Aç"
+  "login": {
+    "title": "Oturum Aç",
+    "login-help": "Yardım ister misiniz?",
+    "input": {
+      "placeholders": {
+        "email": "E‑posta veya telefon numarası",
+        "password": "Parola"
+      },
+      "label": {
+        "checkbox": "Beni hatırla"
+      },
+      "errors": {
+        "auth/wrong-password": "Parola yanlış. Lütfen yeniden deneyin ya da ",
+        "auth/user-not-found": "Bu e‑posta adresi ile bağlantılı bir hesap bulamadık. Lütfen yeniden deneyin ya da ",
+        "reset password": "parolanızı sıfırlayın.",
+        "new account": "yeni bir hesap oluşturun."
+      }
+    },
+    "buttons": {
+      "signIn": "Oturum Aç"
+    },
+    "login-form": {
+      "facebook": "Netflix'e katılmak ister misiniz?",
+      "login-signup": "Netflix'e katılmak ister misiniz?",
+      "login-signup-now": "Şimdi kaydolun.",
+      "recaptcha": "Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor.",
+      "recaptcha-btn": "Daha fazlasını öğrenin.",
+      "recaptcha-text": {
+        "1": "Google reCAPTCHA tarafından toplanan bilgiler Google'ın ",
+        "2": "Gizlilik Politikası ",
+        "3": "ve ",
+        "4": "Hizmet Şartları",
+        "5": "'na tabidir. Bu bilgiler reCAPTCHA hizmetinin sağlanması, sürdürülmesi, geliştirilmesi ve genel hizmet amaçları için kullanılır (Google tarafından kişiselleştirilmiş reklamlar sunmak için kullanılmaz)."
+      }
+    },
+    "footer": {
+      "footer-top": {
+        "call": "Sorularınız mı var? ",
+        "call2": "numaralı telefonu arayın"
+      },
+      "footer-links": [
+        "SSS",
+        "Yardım Merkezi",
+        "Kullanım Koşulları",
+        "Gizlilik",
+        "Çerez Tercihleri",
+        "Kurumsal Bilgiler"
+      ]
+    }
+  },
+  "signup": {
+    "registration": {
+      "header": {
+        "link": "Oturum Aç"
+      },
+      "reg-container": {
+        "step": "ADIM 1 / 2",
+        "title": "Hesabınızın kurulumunu tamamlayın",
+        "text": "Netflix sizin için kişiselleştirilir. İstediğiniz zaman, istediğiniz cihazda izlemek için bir parola oluşturun.",
+        "button": "İleri"
+      }
+    },
+    "regform": {
+      "header": {
+        "link": "Oturum Aç"
+      },
+      "reg-container": {
+        "step": "ADIM 2 / 2",
+        "title": "Üyeliğinizi başlatmak için bir parola oluşturun",
+        "text": "Sadece birkaç adım daha kaldı, sonra bitiyor! Biz de formaliteyi hiç sevmiyoruz.",
+        "input": {
+          "placeholder": {
+            "email": "E-posta",
+            "password": "Bir parola ekleyin"
+          },
+          "checkbox": "Netflix özel teklifleri e‑posta ile gönderilmesin."
+        },
+        "button": "Hesap Oluştur"
+      }
+    }
+  },
+  "browse": {
+    "footer": {
+      "footer-top": {
+        "call": "Questions? Call ",
+        "call2": "null"
+      },
+      "footer-links": [
+        "Seslendirme ve Alt Yazı",
+        "Sesli Betimleme",
+        "Terms of Use",
+        "Privacy",
+        "Cookie Preferences",
+        "Corporate Information"
+      ]
+    }
+  },
+  "logout": {
+    "logout-container": {
+      "title": "Çıkıyor musun?",
+      "text": "Aklında olsun, Netflix oturumunu her seferinde kapatmana gerek yok. Sadece paylaşılan veya ortak alanlarda kullanılan bir bilgisayar ile giriş yaptığında oturumu kapatsan yeter.",
+      "text2": " 30 saniye içinde seni Netflix.com adresine yönlendireceğiz.",
+      "button": "Şimdi Git"
+    },
+    "footer": {
+      "footer-top": {
+        "call": "Sorularınız mı var? ",
+        "call2": "numaralı telefonu arayın"
+      },
+      "footer-links": [
+        "SSS",
+        "Yardım Merkezi",
+        "Kullanım Koşulları",
+        "Gizlilik",
+        "Çerez Tercihleri",
+        "Kurumsal Bilgiler"
+      ]
+    }
   }
 }
