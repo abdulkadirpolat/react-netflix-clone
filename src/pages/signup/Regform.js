@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState  } from "react";
 import { Header, Container, Footer, Button, Input } from "../../components";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
@@ -18,13 +18,12 @@ function Regform() {
   } = useForm();
 
   const history = useHistory();
-  console.log(user);
   const handleClick = () => {
     if (user) history.push("/login");
   };
-  useEffect(() => {
-    if (user) history.push("/login");
-  }, [user])
+  // useEffect(() => {
+  //   if (user) history.push("/login");
+  // }, [user])
 
   const submitForm = (data) => {
     createUserWithEmailAndPassword(auth, data.email, data.password).then(
@@ -73,7 +72,7 @@ function Regform() {
                 {...register("password", {
                   required: true,
                   maxLength: 60,
-                  minLength: 4,
+                  minLength: 6,
                 })}
                 error={errors.password}
               />

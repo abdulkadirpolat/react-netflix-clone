@@ -7,9 +7,9 @@ const errorMessageSwitch = (errorType) => {
     case "required":
       return "This field is required.";
     case "maxLength":
-      return "Your password must contain between 4 and 60 characters.";
+      return "Your password must contain between 6 and 60 characters.";
     case "minLength":
-      return "Your password must contain between 4 and 60 characters.";
+      return "Your password must contain between 6 and 60 characters.";
 
     default:
       return "Error";

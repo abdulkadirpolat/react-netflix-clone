@@ -15,19 +15,23 @@
     "story-cards": [
       {
         "title": "Enjoy on your TV.",
-        "text": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
+        "text": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
+        "image": "images/home-tv.jpg"
       },
       {
         "title": "Download your shows to watch offline.",
-        "text": "Save your favorites easily and always have something to watch."
+        "text": "Save your favorites easily and always have something to watch.",
+        "image": "images/home-mobile.jpg"
       },
       {
         "title": "Watch everywhere.",
-        "text": "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more."
+        "text": "Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
+        "image": "images/home-imac.jpg"
       },
       {
         "title": "Create profiles for kids.",
-        "text": "Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
+        "text": "Send kids on adventures with their favorite characters in a space made just for them—free with your membership.",
+        "image": "images/home-kid.jpg"
       }
     ],
     "bottom-story-card": {
@@ -163,18 +167,43 @@
     }
   },
   "browse": {
+    "navbar": {
+    "left-links": [
+      "Browse",
+      "Home",
+      "TV Shows",
+      "Movies",
+      "New & Popular",
+      "My List"
+    ],
+    "right-link": "Kids",
+    "account-card": {
+      "profile": "Manage Profiles",
+      "account": [
+        "Account", "Help Center"
+      ],
+      "account2": "Sign out of Netflix"
+    } 
+    },
     "footer": {
       "footer-top": {
         "call": "Questions? Call ",
         "call2": "null"
       },
       "footer-links": [
-        "FAQ",
+        "Audio and Subtitles",
+        "Audio Description",
         "Help Center",
+        "Gift Cards",
+        "Media Center",
+        "Investor Relations",
+        "Jobs",
         "Terms of Use",
         "Privacy",
+        "Legal Notices",
         "Cookie Preferences",
-        "Corporate Information"
+        "Corporate Information",
+        "Contact Us"
       ]
     }
   },
@@ -199,5 +228,12 @@
         "Corporate Information"
       ]
     }
+  },
+  "error": {
+    "title": "Lost your way?",
+    "text": "Sorry, we can't find that page. You'll find lots to explore on the home page.",
+    "button": "Netflix Home",
+    "error_code": "Error Code",
+    "from": "FROM:"
   }
 }

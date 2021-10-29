@@ -33,6 +33,7 @@ module.exports = {
       minWidth: {
         m74: "74px",
         m100: "100px",
+        m220: "220px",
         m380: "380px",
         m450: "450px",
         m500: "500px",
@@ -85,6 +86,7 @@ module.exports = {
           "gray-500": "#757575",
           "gray-600": "#737373",
           "gray-700": "#333",
+          "gray-900": "#141414",
           grey: "#808080",
           yellow: "#e87c03",
           green: "#46d369",
@@ -126,6 +128,9 @@ module.exports = {
 
         lgm: { min: "950px" },
         // => @media (min-width: 950px) { ... }
+
+        lgmax: { max: "950px" },
+        // => @media (max-width: 950px) { ... }
 
         "mdmin-1": { min: "885px" },
         // => @media (min-width: 885px) { ... }

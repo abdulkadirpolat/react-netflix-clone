@@ -15,19 +15,23 @@
     "story-cards": [
       {
         "title": "Televizyonunuzda izleyebilirsiniz.",
-        "text": "Akıllı TV, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray oynatıcılar ve daha fazlasında seyredin."
+        "text": "Akıllı TV, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray oynatıcılar ve daha fazlasında seyredin.",
+        "image": "images/home-tv.jpg"
       },
       {
         "title": "Çevrimdışı izlemek için içerikleri indirin.",
-        "text": "En sevdiğiniz içerikleri kolayca kaydedin ve her zaman izleyecek bir şeyleriniz olsun."
+        "text": "En sevdiğiniz içerikleri kolayca kaydedin ve her zaman izleyecek bir şeyleriniz olsun.",
+        "image": "images/home-mobile.jpg"
       },
       {
         "title": "İstediğiniz her yerde izleyin.",
-        "text": "Ekstra ücret ödemeden telefonda, tablette, bilgisayarda, televizyonda sınırsız film ve dizi izleyin."
+        "text": "Ekstra ücret ödemeden telefonda, tablette, bilgisayarda, televizyonda sınırsız film ve dizi izleyin.",
+        "image": "images/home-imac.jpg"
       },
       {
         "title": "Çocuklarınız için profiller oluşturun.",
-        "text": "Üyeliğinize dâhil olan bu ücretsiz deneyim sayesinde çocuklarınız, sadece onlara özel bir alanda en sevdikleri karakterlerle maceralara atılabilir."
+        "text": "Üyeliğinize dâhil olan bu ücretsiz deneyim sayesinde çocuklarınız, sadece onlara özel bir alanda en sevdikleri karakterlerle maceralara atılabilir.",
+        "image": "images/home-kid.jpg"
       }
     ],
     "bottom-story-card": {
@@ -163,6 +167,22 @@
     }
   },
   "browse": {
+    "navbar": {
+      "left-links": [
+        "Gözat",
+        "Ana Sayfa",
+        "Diziler",
+        "Filmler",
+        "Yeni ve Popüler",
+        "Listem"
+      ],
+      "right-link": "Çocuk",
+      "account-card": {
+        "profile": "Profil Yönetimi",
+        "account": ["Hesap", "Yardım Merkezi"],
+        "account2": "Netflix oturumunu kapat"
+      }
+    },
     "footer": {
       "footer-top": {
         "call": "Questions? Call ",
@@ -171,10 +191,17 @@
       "footer-links": [
         "Seslendirme ve Alt Yazı",
         "Sesli Betimleme",
-        "Terms of Use",
-        "Privacy",
-        "Cookie Preferences",
-        "Corporate Information"
+        "Yardım Merkezi",
+        "Hediye Kartları",
+        "Medya Merkezi",
+        "Yatırımcı İlişkileri",
+        "İş İmkanları",
+        "Kullanım Koşulları",
+        "Gizlilik",
+        "Yasal Hükümler",
+        "Çerez Tercihleri",
+        "Kurumsal Bilgiler",
+        "Bize Ulaşın"
       ]
     }
   },
@@ -199,5 +226,12 @@
         "Kurumsal Bilgiler"
       ]
     }
+  },
+  "error": {
+    "title": "Yolunuzu mu kaybettiniz?",
+    "text": "Üzgünüz, aradığınız sayfayı bulamadık. Fakat ana sayfada keşfedebileceğiniz pek çok içerik var.",
+    "button": "Netflix Ana Sayfası",
+    "error_code": "Hata Kodu",
+    "from": "KAYNAK:"
   }
 }

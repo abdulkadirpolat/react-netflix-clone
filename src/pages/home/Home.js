@@ -10,12 +10,12 @@ import {
 import { IoGlobe } from "react-icons/io5";
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form"
-import { useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./home.css";
 
 function Home() {
+  const history = useHistory();
   const [lang, setLang] = useState("");
   const { t: translate } = useTranslation();
   const [actived, setActived] = useState(false);
@@ -27,10 +27,9 @@ function Home() {
     setValue,
   } = useForm();
 
-  const history = useHistory();
-   const user =  "hello"
-  const handleClick = () => {
-    if (user=== "hello") history.push("/signup/registration");
+  const submitForm = (data) => {
+    console.log(data);
+    if (data) history.push("/signup/registration");
   };
 
   function handleChangeLanguage(lang) {
@@ -79,23 +78,30 @@ function Home() {
                 <h3 className="text-xl">
                   {translate("home.top-story-card.text")}
                 </h3>
-                <div className="flex max-w-2xl mx-auto h-24 mt-4">
-                  <div className="w-full ">
+                <form
+                  onSubmit={handleSubmit(submitForm)}
+                  className="block max-w-2xl mx-auto h-24 mt-4 flex-row lgm:flex"
+                >
+                  <div className="w-full">
                     <Input
                       placeholder="E-posta adresi"
                       type="email"
                       outline
                       className="border-none w-full rounded-l-none min-h-mh70   text-nx-gray-400"
+                      onChange={(event, { name, value }) => {
+                        setValue(name, value);
+                      }}
+                      {...register("E-posta adresi", { required: true })}
+                      error={errors.email}
                     />
                   </div>
                   <Button
-                  onClick={handleClick}
                     className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70
                    h-h-70 px-8 py-2 cursor-pointer border-l border-nx-gray-700 whitespace-nowrap "
                   >
                     {translate("home.top-story-card.button.label")}
                   </Button>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -103,15 +109,25 @@ function Home() {
       </div>
       {translate("home.story-cards", { returnObjects: true }).map(
         (items, index) => (
-          <div key={index} className="py-16 px-11 border-b-8 border-nx-gray-700 text-white h-96 ">
-            <Card   
-              className={`${index % 2 === 0 ? "" : "flex-row-reverse"}`}
+          <div
+            key={index}
+            className="py-16 px-11 border-b-8 border-nx-gray-700 text-white lgmax:text-center lgmax:items-center "
+          >
+            <Card
+              className={`${
+                index % 2 === 0
+                  ? "lgmax:flex-col"
+                  : "lgm:flex-row-reverse lgmax:flex-col"
+              }`}
             >
-              <div className="w-1/2">
+              <div className="w-full lgm:w-1/2">
                 <h1 className="text-5xl font-semibold">{items.title}</h1>
                 <h2 className="text-3xl">{items.text}</h2>
               </div>
-              <div className="w-1/2 h-full">ed</div>
+              <div className="w-full lgm:w-1/2 h-full lgmax:w-auto">
+
+              <img src={items.image} alt="" className="" />
+              </div>
             </Card>
           </div>
         )
@@ -119,41 +135,56 @@ function Home() {
 
       <div className="py-16 px-11 border-b-8 border-nx-gray-700 text-white ">
         <div className="block text-center">
-          <h1 className="mb-2 text-5xl font-bold"> {translate("home.bottom-story-card.title")}</h1>
+          <h1 className="mb-2 text-5xl font-bold">
+            {" "}
+            {translate("home.bottom-story-card.title")}
+          </h1>
           <ul className="text-3xl max-w-3xl mx-auto my-12">
             {translate("home.bottom-story-card.list-items", {
               returnObjects: true,
             }).map((items, index) => (
               <li key={index} className="bg-nx-gray-700 mb-2">
-                <button onClick={() => setActived(!actived)} className="border-b border-black w-full p-7 text-left">
+                <button
+                  onClick={() => setActived(!actived)}
+                  className="border-b border-black w-full p-7 text-left"
+                >
                   {items.title}{" "}
                 </button>
-                <div className={`mt-3 p-7 max-h-3xl ${actived ? "" : "hidden"}`}>{items.text} </div>
+                <div
+                  className={`mt-3 p-7 max-h-3xl ${actived ? "" : "hidden"}`}
+                >
+                  {items.text}{" "}
+                </div>
               </li>
             ))}
           </ul>
           <div className="pt-3">
-                <h3 className="text-xl">
-                  {translate("home.top-story-card.text")}
-                </h3>
-                <div className="flex max-w-2xl mx-auto h-24 mt-4">
-                  <div className="w-full ">
-                    <Input
-                      placeholder="E-posta adresi"
-                      type="email"
-                      outline
-                      className="border-none w-full rounded-l-none min-h-mh70   text-nx-gray-400"
-                    />
-                  </div>
-                  <Button
-                  onClick={handleClick}
-                    className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70
-                   h-h-70 px-8 py-2 cursor-pointer border-l border-nx-gray-700 whitespace-nowrap"
-                  >
-                    {translate("home.top-story-card.button.label")}
-                  </Button>
-                </div>
+            <h3 className="text-xl">{translate("home.top-story-card.text")}</h3>
+            <form
+              onSubmit={handleSubmit(submitForm)}
+              className="block max-w-2xl mx-auto h-24 mt-4 flex-row lgm:flex"
+            >
+              <div className="w-full ">
+                <Input
+                  placeholder="E-posta adresi"
+                  type="email"
+                  outline
+                  className="border-none w-full rounded-l-none min-h-mh70   text-nx-gray-400"
+                  onChange={(event, { name, value }) => {
+                    setValue(name, value);
+                  }}
+                  {...register("email", { required: true })}
+                  error={errors.email}
+                />
               </div>
+              <Button
+                className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70
+                   h-h-70 px-8 py-2 cursor-pointer border-l border-nx-gray-700 whitespace-nowrap"
+              >
+                {translate("home.top-story-card.button.label")}
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
       <Footer

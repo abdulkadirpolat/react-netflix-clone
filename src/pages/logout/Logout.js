@@ -11,7 +11,7 @@ function Logout() {
     setTimeout(() => {
       history.push("/");
     }, 30000);
-  }, []);
+  });
   return (
     <Container className="logout-container">
       <Header>

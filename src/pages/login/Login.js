@@ -79,7 +79,7 @@ function Login() {
                     {...register("password", {
                       required: true,
                       maxLength: 60,
-                      minLength: 4,
+                      minLength: 6,
                     })}
                     error={errors.password}
                   />
