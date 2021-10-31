@@ -148,7 +148,7 @@ function Browse() {
         </div>
       </Navbar>
       <BillboardAnimation  className="min-h-h4" />
-      {/* <div className="-mt-40">
+      <div className="-mt-40">
         <Row
           title="Netflix Orjinals"
           fetchUrl={fetchRequest.netflixOriginalsFetch}
@@ -162,7 +162,7 @@ function Browse() {
           title="Netflix Orjinals"
           fetchUrl={fetchRequest.romanceMovieFetch}
         />
-      </div> */}
+      </div>
       <Footer
         className="bg-transparent"
         mainFooter
