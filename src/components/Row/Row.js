@@ -14,7 +14,6 @@ const Row = ({ children, title, className, fetchUrl, ...props }) => {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(movies);
   return (
     <div className={ `${className} `} {...props}>
       {/* {children ? children :" hello row"} */}

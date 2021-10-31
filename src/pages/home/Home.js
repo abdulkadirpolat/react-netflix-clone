@@ -30,8 +30,6 @@ function Home() {
   } = useForm();
 
   const submitForm = (data) => {
-   console.log(data)
- 
     if (data ){
      history.push("/signup/registration");
     } 
