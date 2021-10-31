@@ -28,9 +28,7 @@ function Login() {
         setUser(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        // const errorMessage = error.message;
-        setErrorCode(errorCode)
+        setErrorCode(error.code)
       });
   };
 
@@ -38,8 +36,6 @@ function Login() {
   return (
     <Container className={"login-container"}>
       <Header />
-
-      {/* mdmin-3:pt-24 mdm-2:pt-24 */}
       <div className="login-body text-gray-500 sticky z-10 text-sm mdmin-3:min-h-screen mdmin-3:-mb-64">
         <div className="mdmin-3:px-1/20  px-0 ">
           <div className="mdmin-3:max-w-md mdmin-3:px-16 px-1/20 mdmin-3:pt-16

@@ -8,17 +8,19 @@ import {
   Input,
 } from "../../components";
 import { IoGlobe } from "react-icons/io5";
+// import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 import { Link, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./home.css";
+import Toggle from "../../components/Toggle";
 
 function Home() {
   const history = useHistory();
   const [lang, setLang] = useState("");
   const { t: translate } = useTranslation();
-  const [actived, setActived] = useState(false);
+  // const [actived, setActived] = useState(false);
 
   const {
     register,
@@ -28,8 +30,11 @@ function Home() {
   } = useForm();
 
   const submitForm = (data) => {
-    console.log(data);
-    if (data) history.push("/signup/registration");
+   console.log(data)
+ 
+    if (data ){
+     history.push("/signup/registration");
+    } 
   };
 
   function handleChangeLanguage(lang) {
@@ -39,26 +44,26 @@ function Home() {
 
   return (
     <Container className="bg-black">
-      <Header>
-        <div className="flex items-center h-full mx-m-1">
+      <Header className="absolute" >
+        <div className="flex items-center h-full mx-m-1 z-30">
           <div
-            className={`text-sm bg-black text-white local-select rounded-sm relative 
+            className={`text-sm bg-black text-white rounded-sm relative 
                  border-nx-gray-300 border border-solid `}
           >
             <select
               onChange={handleChangeLanguage}
               value={lang ? lang : "en"}
-              className={`py-2 pl-5 w-24 bg-black`}
+              className={`py-2 smm3:py-1  pl-5 w-24 bg-black`}
             >
               <option value="tr">Türkçe</option>
               <option value="en">English</option>
             </select>
             <IoGlobe
-              className={`absolute left-1 text-base top-1/4 text-white`}
+              className={`absolute left-1 text-base top-1/4 smm3:top-1/5 text-white`}
             />
           </div>
-          <Link to="/login">
-            <Button className="small red ml-7">
+          <Link className="mr-5" to="/login">
+            <Button className="small red ml-7 smm3:ml-2">
               {translate("home.navbar-btn")}
             </Button>
           </Link>
@@ -68,14 +73,14 @@ function Home() {
         <div className="home-body ">
           <div className="px-11 py-16 h-96 text-white">
             <div className="mx-auto h-full max-w-5xl sticky z-10">
-              <h1 className="text-6xl font-semibold">
+              <h1 className="text-5xl  2xlmin-3:text-6xl smm3:text-2xl font-semibold">
                 {translate("home.top-story-card.title")}
               </h1>
-              <h2 className="text-2xl my-4">
+              <h2 className="text-2xl smm3:text-base my-4">
                 {translate("home.top-story-card.subtitle")}
               </h2>
               <div className="pt-3">
-                <h3 className="text-xl">
+                <h3 className="text-xl smm3:text-base">
                   {translate("home.top-story-card.text")}
                 </h3>
                 <form
@@ -87,16 +92,16 @@ function Home() {
                       placeholder="E-posta adresi"
                       type="email"
                       outline
-                      className="border-none w-full rounded-l-none min-h-mh70   text-nx-gray-400"
+                      className="border-none w-full rounded-l-none min-h-mh70 mdm-3:min-h-mh40 text-nx-gray-400"
                       onChange={(event, { name, value }) => {
                         setValue(name, value);
                       }}
-                      {...register("E-posta adresi", { required: true })}
+                      {...register("email")}
                       error={errors.email}
                     />
                   </div>
                   <Button
-                    className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70
+                    className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70  mdm-3:min-h-mh40  mdm-3:text-base
                    h-h-70 px-8 py-2 cursor-pointer border-l border-nx-gray-700 whitespace-nowrap "
                   >
                     {translate("home.top-story-card.button.label")}
@@ -121,41 +126,27 @@ function Home() {
               }`}
             >
               <div className="w-full lgm:w-1/2">
-                <h1 className="text-5xl font-semibold">{items.title}</h1>
-                <h2 className="text-3xl">{items.text}</h2>
+                <h1 className="text-5xl smm3:text-2xl font-semibold">{items.title}</h1>
+                <h2 className="text-3xl smm3:text-lg">{items.text}</h2>
               </div>
               <div className="w-full lgm:w-1/2 h-full lgmax:w-auto">
-
-              <img src={items.image} alt="" className="" />
+                <img src={items.image} alt="" />
               </div>
             </Card>
           </div>
         )
       )}
 
-      <div className="py-16 px-11 border-b-8 border-nx-gray-700 text-white ">
+      <div className="py-16 px-11 smm3:px-0 border-b-8 border-nx-gray-700 text-white ">
         <div className="block text-center">
-          <h1 className="mb-2 text-5xl font-bold">
-            {" "}
+          <h1 className="mb-2 text-5xl  smm3:text-2xl font-bold">
             {translate("home.bottom-story-card.title")}
           </h1>
-          <ul className="text-3xl max-w-3xl mx-auto my-12">
+          <ul className="text-3xl smm3:text-lg max-w-3xl mx-auto my-12">
             {translate("home.bottom-story-card.list-items", {
               returnObjects: true,
             }).map((items, index) => (
-              <li key={index} className="bg-nx-gray-700 mb-2">
-                <button
-                  onClick={() => setActived(!actived)}
-                  className="border-b border-black w-full p-7 text-left"
-                >
-                  {items.title}{" "}
-                </button>
-                <div
-                  className={`mt-3 p-7 max-h-3xl ${actived ? "" : "hidden"}`}
-                >
-                  {items.text}{" "}
-                </div>
-              </li>
+             <Toggle items= {items} key= {index} />
             ))}
           </ul>
           <div className="pt-3">
@@ -169,16 +160,16 @@ function Home() {
                   placeholder="E-posta adresi"
                   type="email"
                   outline
-                  className="border-none w-full rounded-l-none min-h-mh70   text-nx-gray-400"
+                  className="border-none w-full rounded-l-none min-h-mh70 mdm-3:min-h-mh40 smm3:mx-5 smm3:max-w-sm text-nx-gray-400"
                   onChange={(event, { name, value }) => {
                     setValue(name, value);
                   }}
-                  {...register("email", { required: true })}
+                  {...register("email") }
                   error={errors.email}
                 />
               </div>
               <Button
-                className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70
+                className="text-3xl bg-nx-red hover:bg-nx-red-2 leading-loose min-h-mh70 mdm-3:min-h-mh40  mdm-3:text-base
                    h-h-70 px-8 py-2 cursor-pointer border-l border-nx-gray-700 whitespace-nowrap"
               >
                 {translate("home.top-story-card.button.label")}

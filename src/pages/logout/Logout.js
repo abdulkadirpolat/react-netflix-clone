@@ -23,7 +23,7 @@ function Logout() {
           </Link>
         </div>
       </Header>
-      <div className="max-w-md mx-auto logout-body min-h-screen mdmin-3:-mb-64">
+      <div className="max-w-md mx-auto logout-body min-h-screen  -mb-64">
         <div className="bg-white py-8 px-11">
           <h1 className="text-3xl mb-5">
             {translate("logout.logout-container.title")}

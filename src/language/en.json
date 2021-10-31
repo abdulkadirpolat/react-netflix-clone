@@ -160,7 +160,12 @@
             "email": "Email",
             "password": "Add a password"
           },
-          "checkbox": "Please do not email me Netflix special offers."
+          "checkbox": "Please do not email me Netflix special offers.",
+          "errors": {
+            "auth/email-already-in-use": "Looks like that account already exists. ",
+            "sign into that account": "Sign into that account ",
+            "auth/email-already-in-use2": "or try using a different email."
+          }
         },
         "button": "Create Account"
       }

@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import "./footer.css";
 import { IoGlobe } from "react-icons/io5";
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiOutlineTwitter,
+  AiFillYoutube,
+} from "react-icons/ai";
 import i18n from "../../i18n";
-import { useTranslation } from "react-i18next"
-import PropTypes from "prop-types"
+import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 const Footer = ({
   className,
   children,
   mainFooter,
   signUpFooter,
+  socialLink,
   footerItems,
   ...props
 }) => {
@@ -34,13 +41,24 @@ const Footer = ({
       >
         {mainFooter || signUpFooter ? (
           <div className={`${signUpFooter ? "max-w-5xl-1" : ""}`}>
-            <div className="mb-8 text-base">
-            {translate("login.footer.footer-top.call")}
-              <span className="hover:underline cursor-pointer ">
-                0850-390-7444
-              </span>{" "}
-             { translate("login.footer.footer-top.call2") === "null" ? null : translate("login.footer.footer-top.call2") }
-            </div>
+            {socialLink ? (
+              <div className="mb-5 flex">
+                <AiFillFacebook className="text-4xl mr-4 cursor-pointer" />
+                <AiFillInstagram className="text-4xl mr-4 cursor-pointer" />
+                <AiOutlineTwitter className="text-4xl mr-4 cursor-pointer" />
+                <AiFillYoutube className="text-4xl mr-4 cursor-pointer" />
+              </div>
+            ) : (
+              <div className="mb-8 text-base">
+                {translate("login.footer.footer-top.call")}
+                <span className="hover:underline cursor-pointer ">
+                  0850-390-7444
+                </span>{" "}
+                {translate("login.footer.footer-top.call2") === "null"
+                  ? null
+                  : translate("login.footer.footer-top.call2")}
+              </div>
+            )}
             <ul className="h-full flex flex-wrap text-f13">
               {footerItems
                 ? footerItems.map((item, i) => (
@@ -50,7 +68,8 @@ const Footer = ({
                     >
                       {item}
                     </li>
-                  )) : null}
+                  ))
+                : null}
             </ul>
             <div
               className={`mb-5 text-sm bg-black local-select rounded-sm relative ${
@@ -88,7 +107,7 @@ const Footer = ({
 Footer.propTypes = {
   footerItems: PropTypes.array.isRequired,
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default Footer;

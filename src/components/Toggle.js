@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 
-const Toggle = ({ items, key }) => {
+const Toggle = ({ items, ...props }) => {
   const [actived, setActived] = useState(false);
+
   return (
-    <li key={key} className="bg-nx-gray-700 mb-2">
+    <li {...props} className="bg-nx-gray-700 mb-2">
       <button
         onClickCapture={() => setActived(!actived)}
         className="border-b border-black w-full lgm:p-7 p-5 smm3:py-3 smm3:px-5 text-left relative"

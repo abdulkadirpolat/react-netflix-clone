@@ -5,15 +5,15 @@ background-size: cover;
   }
 
   .home-container::after {
-    @apply absolute top-0 left-0 w-full h-full max-h-3xl z-0 mdmin-3:bg-opac-200 bg-black;
+    @apply absolute top-0 left-0 w-full h-full max-h-3xl smm3:max-h-xl z-0  bg-opac-200  ;
     content: " ";
   }
 
   .home-body::before {
     content: "";
-     @apply h-h-91 mdmin-3:block hidden;
+     @apply h-h-91  block  ;
   }
   .home-body::after {
     content: "";
-     @apply h-61 mdmin-3:block hidden;
+     @apply h-61 block smm3:hidden ;
   }

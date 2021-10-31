@@ -8,3 +8,8 @@ background-size: cover;
     content: "";
      @apply h-28 mdmin-3:block hidden;
   }
+
+  .logout-body::after {
+    content: "";
+     @apply h-64 block ;
+  }

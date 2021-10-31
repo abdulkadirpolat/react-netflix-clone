@@ -11,7 +11,7 @@ import Loading from "../../components/Loading";
 import { BiCaretDown } from "react-icons/bi";
 import { FaSearch, FaBell } from "react-icons/fa";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
-import requests from "../../requests";
+import fetchRequest from "../../fetchRequest";
 import { useTranslation } from "react-i18next";
 
 function Browse() {
@@ -20,16 +20,10 @@ function Browse() {
   const [active, setActive] = useState(false);
   const { t: translate } = useTranslation();
   const handleAccountDropDown = () => {
-    // setActive(true);
-   
-      setActive(true);
-    
+    setActive(true);
   };
   const handleAccountDropUp = () => {
-    // setActive(false);
-  
-      setActive(false);
-    
+    setActive(false);
   };
 
   return inLoading ? (
@@ -67,7 +61,9 @@ function Browse() {
           </ul>
           <div className="flex h-full items-center text-white">
             <FaSearch className="text-xl mr-5 cursor-pointer"></FaSearch>
-            <div className="mr-5 cursor-pointer">Çocuk</div>
+            <div className="mr-5 cursor-pointer">
+              {translate("browse.navbar.right-link")}
+            </div>
             <FaBell className="text-2xl mr-5 cursor-pointer"></FaBell>
             <div className="account-menu relative cursor-pointer">
               <div
@@ -79,7 +75,7 @@ function Browse() {
                 <div className="relative flex  w-8 h-8  ">
                   <img
                     className=" w-full rounded"
-                    src="https://occ-0-4451-778.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABZePc06g6rt5BYoO3sH6QA1VjxT3XxM3MZjMUeyI5na3MfBIRS1yD85nNlcQ0iWE6CPg8g87DS9G1CtBU2xLQVA.png?r=ee6"
+                    src="https://occ-0-4451-778.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbme8JMz4rEKFJhtzpOKWFJ_6qX-0y5wwWyYvBhWS0VKFLa289dZ5zvRBggmFVWVPL2AAYE8xevD4jjLZjWumNo.png?r=a41"
                     alt=""
                   />
                   <IoMdArrowDropup
@@ -114,7 +110,7 @@ function Browse() {
                       src="https://occ-0-4451-778.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYnnca7HCf0z4YHtIK5R8MIGCeMyodAsxBYSBmMkYHqjSw46VWWyNQirfwxT-CkbxPkp-G84Wu-iOMwGG-r9QAs.png?r=f71"
                       alt=""
                     />
-                    Koray
+                    User
                   </li>
                   <li className="py-1 px-3 hover:underline leading-8 flex">
                     <img
@@ -151,22 +147,26 @@ function Browse() {
           </div>
         </div>
       </Navbar>
-      <BillboardAnimation className="min-h-h2" />
-      <div>
+      <BillboardAnimation  className="min-h-h4" />
+      {/* <div className="-mt-40">
         <Row
           title="Netflix Orjinals"
-          fetchUrl={requests.netflixOriginalsFetch}
+          fetchUrl={fetchRequest.netflixOriginalsFetch}
         />
-        <Row title="Treding Now" fetchUrl={requests.trendingFetch} />
-        <Row title="Netflix Orjinals" fetchUrl={requests.topRatedFetch} />
-        <Row title="Comedies" fetchUrl={requests.comedyMovieFetch} />
-        <Row title="Action Movies" fetchUrl={requests.actionMovieFetch} />
-        <Row title="Horror Movies" fetchUrl={requests.horrorMovieFetch} />
-        <Row title="Netflix Orjinals" fetchUrl={requests.romanceMovieFetch} />
-      </div>
+        <Row title="Treding Now" fetchUrl={fetchRequest.trendingFetch} />
+        <Row title="Netflix Orjinals" fetchUrl={fetchRequest.topRatedFetch} />
+        <Row title="Comedies" fetchUrl={fetchRequest.comedyMovieFetch} />
+        <Row title="Action Movies" fetchUrl={fetchRequest.actionMovieFetch} />
+        <Row title="Horror Movies" fetchUrl={fetchRequest.horrorMovieFetch} />
+        <Row
+          title="Netflix Orjinals"
+          fetchUrl={fetchRequest.romanceMovieFetch}
+        />
+      </div> */}
       <Footer
         className="bg-transparent"
         mainFooter
+        socialLink
         footerItems={translate("browse.footer.footer-links", {
           returnObjects: true,
         })}

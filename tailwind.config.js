@@ -45,6 +45,8 @@ module.exports = {
       },
       minHeight: {
         "min-h-1/4": "25%",
+        900: "900px",
+        720: "720px",
         h: "625px",
         h2: "660px",
         h3: "550px",
@@ -61,7 +63,9 @@ module.exports = {
         "1/2": "50%",
         "3/4": "75%",
         full: "100%",
+        "xl": "503px",
         "3xl": "720px",
+        "4xl": "900px"
       },
       fontSize: {
         100: ".85vw",
@@ -86,6 +90,7 @@ module.exports = {
           "gray-500": "#757575",
           "gray-600": "#737373",
           "gray-700": "#333",
+          "gray-800": "#181818",
           "gray-900": "#141414",
           grey: "#808080",
           yellow: "#e87c03",
@@ -155,6 +160,9 @@ module.exports = {
 
         smm2: { max: "500px" },
         // => @media (max-width: 500px) { ... }
+
+        smm3: { max: "550px" },
+        // => @media (max-width: 550px) { ... }
 
         smin: { min: "480px" },
         // => @media (min-width: 480px) { ... }

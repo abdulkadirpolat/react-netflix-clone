@@ -1,19 +1,21 @@
 import React, { useState  } from "react";
 import { Header, Container, Footer, Button, Input } from "../../components";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useTranslation} from "react-i18next"
+import { IoWarning } from "react-icons/io5";
 const auth = getAuth();
 
 function Regform() {
   const [user, setUser] = useState(null);
+  const [errorCode, setErrorCode] = useState(null)
   const {t: translate} = useTranslation()
 
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit, 
     setValue,
   } = useForm();
 
@@ -31,7 +33,9 @@ function Regform() {
         const user = userCredential.user;
         setUser(user);
       }
-    );
+    ).catch((error)=> {
+      setErrorCode(error.code)
+    })
   };
 
   return (
@@ -40,13 +44,25 @@ function Regform() {
       <div className="w-full pb-24">
         <div className="max-w-screen-lg mx-auto mt-0 mb-4 py-8 pr-5 pl-15">
           <div className="max-w-md mx-auto ">
+          {errorCode ? (
+            <div className="mb-4 px-5 py-6 text-white bg-yellow-500 rounded-sm leading-4 flex "> 
+            <div className="leading-4"> 
+              <IoWarning className="text-3xl ml-1"  />
+              </div>
+                  <div className="pl-3"   >
+                    <b>{translate("signup.regform.reg-container.input.errors.auth/email-already-in-use")}</b>
+                    <Link className="underline" to="/login">{translate("signup.regform.reg-container.input.errors.sign into that account")}</Link>
+                    {translate("signup.regform.reg-container.input.errors.auth/email-already-in-use2")}
+                  </div>
+                  </div>
+                ) : null}
             <span className="text-f13">{translate("signup.regform.reg-container.step")}</span>
             <div className="text-2xl font-semibold pb-3">
             {translate("signup.regform.reg-container.title")}
             </div>
             <div className="mb-2">
             {translate("signup.regform.reg-container.text")}
-            </div>
+            </div>        
             <form onSubmit={handleSubmit(submitForm)}>
               <Input
               height="60px"

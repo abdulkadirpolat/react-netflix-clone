@@ -160,7 +160,12 @@
             "email": "E-posta",
             "password": "Bir parola ekleyin"
           },
-          "checkbox": "Netflix özel teklifleri e‑posta ile gönderilmesin."
+          "checkbox": "Netflix özel teklifleri e‑posta ile gönderilmesin.",
+          "errors": {
+            "auth/email-already-in-use": "Bu hesap zaten var gibi görünüyor. ",
+            "sign into that account": " İlgili hesapta oturum açın ",
+            "auth/email-already-in-use2": "ya da farklı bir e‑posta adresi kullanmayı deneyin."
+          }
         },
         "button": "Hesap Oluştur"
       }
