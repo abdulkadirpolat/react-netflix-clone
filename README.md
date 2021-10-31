@@ -1,7 +1,7 @@
 
 # Netflix Clone
 
-* [Demo Netflix Clone]("https://messaging-app-nu.vercel.app/#/login")
+* [Demo Netflix Clone]("https://react-netflix-clone-ten.vercel.app/")
 
 This project We Code is cloned for Bootcamp, it is a simplified front-end clone of Netflix. Built with React and TailwindCSS.
 
