@@ -3,17 +3,21 @@ import { Link, Redirect } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button, Footer, Input, Header, Container } from "../../components";
 import { useForm } from "react-hook-form";
+// import { useSelector, useDispatch } from "react-redux"
 import "./login.css";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const auth = getAuth();
 
+
 function Login() {
   const [googlePrivacy, setGooglePrivacy] = useState(false);
-  const [user, setUser] = useState(null);
+  const [userr, setUserr] = useState(false);
   const [errorCode, setErrorCode] = useState(null);
   const { t: translate } = useTranslation();
-
+  // const dispatch = useDispatch()
+  // const user = useSelector((state) => state.user.user);
+ 
   const {
     register,
     formState: { errors },
@@ -24,15 +28,16 @@ function Login() {
   const submitForm = (data) => {
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
-        const user = userCredential.user;
-        setUser(user);
+        const userr = userCredential.user;
+        setUserr(userr);
+ 
       })
       .catch((error) => {
         setErrorCode(error.code)
       });
   };
 
-  if (user) return <Redirect to="/browse" />;
+  if (userr) return <Redirect to="/browse" />;
   return (
     <Container className={"login-container"}>
       <Header />

@@ -60,26 +60,53 @@ const BillBoardAnimation = ({ className, ...props }) => {
           </div>
         </div>
         {showDetail ? (
-          <div id="detail-card" onClick= {(e) => e.target.id === "detail-card" ? setShowDetail(!showDetail) : ""} className="absolute top-0 bottom-0 min-h-screen min-w-full bg-opac-100 z-40">
+          <div
+            id="detail-card"
+            onClick={(e) =>
+              e.target.id === "detail-card" ? setShowDetail(!showDetail) : ""
+            }
+            className="fixed top-0 bottom-0 min-h-screen min-w-full bg-opac-100 z-40"
+          >
             <div
-              className="fixed top-28 right-1/4 z-50 text-2xl text-white
-             max-w-4xl bg-nx-gray-800 min-h-720 max-h-3xl h-full rounded-lg overflow-hidden"
+              className="fixed top-28 right-1/4 z-50 text-2xl text-white 2xlm:right-1/5 2xlm:left-1/5 lgmax:right-1/20 lgmax:left-1/20
+             max-w-4xl  bg-nx-gray-800 h-auto max-h-3xl  rounded-lg overflow-hidden"
             >
               <div
-                className="absolute right-4 top-4 cursor-pointer bg-gray-700 rounded-full p-1"
+                className="absolute right-4 top-4 cursor-pointer bg-gray-700 rounded-full p-1 z-30"
                 onClick={handleClick}
               >
                 <IoMdClose className="text-white text-3xl" />
               </div>
-              <img
-                className="h-4/6 w-full bg-cover bg-no-repeat"
-                src={`https://www.themoviedb.org/t/p/w1280_and_h720_multi_faces/${movie.poster_path}`}
-                alt=""
-              />
+              <div className="relative">
+                <img
+                  className="h-4/6 w-full bg-cover bg-no-repeat"
+                  src={`https://www.themoviedb.org/t/p/w1280_and_h720_multi_faces/${movie.poster_path}`}
+                  alt=""
+                />
+                <div className="w-full absolute left-10 bottom-1/5">
+                  <h2 className="text-4xl xlm:text-3xl lgmax:text-2xl w-3/5 xlm:w-4/5 font-extrabold">
+                    {movie.name}
+                  </h2>
+                  <div className="flex xlm:text-xl">
+                    <button className="bg-white text-black pl-9 pr-11 py-1 mr-2 xlm:pr-5 xlm:pl-4 flex items-center rounded-md">
+                      <IoMdPlay className="mr-2 " />
+                      Oynat
+                    </button>
+                    <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer ">
+                      <HiPlus className="text-white" />
+                    </div>
+                    <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer">
+                      <AiOutlineLike className="text-white" />
+                    </div>
+                    <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer">
+                      <AiOutlineDislike />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="p-9">
                 <div className="text-lg text-nx-green">
                   <strong>
-                    {" "}
                     %{`${rating[0]}${rating[1] ? rating[1] : 0} `}
                   </strong>{" "}
                   Eşleşme{" "}
@@ -87,7 +114,7 @@ const BillBoardAnimation = ({ className, ...props }) => {
                     {movie.first_air_date.slice(0, 4)}
                   </span>
                 </div>
-                <p className="text-lg w-5/6">
+                <p className="text-lg w-5/6 xlm:w-full">
                   {
                     (movie.overview =
                       movie.overview.length < 500
@@ -95,24 +122,6 @@ const BillBoardAnimation = ({ className, ...props }) => {
                         : `${movie.overview.slice(0, 500)} ...`)
                   }
                 </p>
-              </div>
-              <div className=" absolute bottom-80 left-10 ">
-                <h2 className="text-4xl w-4/12 font-extrabold">{movie.name}</h2>
-                <div className="flex">
-                  <button className="bg-white text-black pl-9 pr-11 py-1 mr-2 flex items-center rounded-md">
-                    <IoMdPlay className="mr-2" />
-                    Oynat
-                  </button>
-                  <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer">
-                    <HiPlus className="text-white" />
-                  </div>
-                  <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer">
-                    <AiOutlineLike className="text-white" />
-                  </div>
-                  <div className="border-2 rounded-full border-nx-gray-200 p-2 mr-2 cursor-pointer">
-                    <AiOutlineDislike />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
