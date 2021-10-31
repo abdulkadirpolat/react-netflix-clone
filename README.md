@@ -1,31 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Netflix Clone
 
-## Available Scripts
+* [Demo Netflix Clone]("https://messaging-app-nu.vercel.app/#/login")
 
-In the project directory, you can run:
+This project We Code is cloned for Bootcamp, it is a simplified front-end clone of Netflix. Built with React and TailwindCSS.
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Run it on your computer
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone the project
 
-### `yarn test`
+```bash
+  git clone https://link-to-project
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Go to the project directory
 
-### `yarn build`
+```bash
+  cd react-netflix-clone
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install required packages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run the server
 
+```bash
+  yarn run start
+```
+
+  
+## Used technologies
+
+**Client:** React, React Router, Axios, i18next, react-hook-form, Storybook, React icons, TailwindCSS
+
+**Server:** Firebase
+
+  
+## Features
+
+- Responsive Design
+
+
+  
+## Screenshots
+
+![Home Page](https://i.hizliresim.com/kd2t268.jpg)
+---
+![Login Page](https://i.hizliresim.com/qrp4h64.jpg)
+---
+![SignUp Page](https://i.hizliresim.com/5zi7f6j.jpg)
+---
+![Browse Page](https://i.hizliresim.com/bop0i8g.jpg)
+---
+![Error Page](https://i.hizliresim.com/jzsmlnm.jpg)
+ 
+## Developer
+
+- Abdulkadir Polat 
+
+  
+## Feedback
+
+If you have any feedback, please contact us at tr.abdulkadir.polat@gmail.com
+
+  
+## Licence
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+  
