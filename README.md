@@ -3,7 +3,7 @@
 
  [Demo Netflix Clone](https://react-netflix-clone-ten.vercel.app/)
 
-This project We Code is cloned for Bootcamp, it is a simplified front-end clone of Netflix. Built with React and TailwindCSS.
+This project Kodluyoruz is cloned for Bootcamp, it is a simplified front-end clone of Netflix. Built with React and TailwindCSS.
 
 
 ## Run it on your computer
