@@ -11,7 +11,7 @@ This project Kodluyoruz is cloned for Bootcamp, it is a simplified front-end clo
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/abdulkadirpolat/react-netflix-clone.git
 ```
 
 Go to the project directory
