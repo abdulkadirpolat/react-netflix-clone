@@ -161,8 +161,8 @@ function Browse() {
           </div>
         </div>
       </Navbar>
-      <BillboardAnimation className="min-h-h4" />
-      <div className="-mt-40">
+      <BillboardAnimation className="min-h-h4 mdm-3:h-80 smm3:min-h-full mb-5" />
+      <div  >
         <Row
           title="Netflix Orjinals"
           fetchUrl={fetchRequest.netflixOriginalsFetch}

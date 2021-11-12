@@ -15,7 +15,7 @@ const Row = ({ children, title, className, fetchUrl, ...props }) => {
   }, [fetchUrl]);
 
   return (
-    <div className={`${className} `} {...props}>
+    <div className={`${className ? className : ""} `} {...props}>
       <div className="px-15 ">
         <h2 className="text-white text-2xl font-semibold mb-7 group flex">
           {title}{" "}
@@ -28,11 +28,11 @@ const Row = ({ children, title, className, fetchUrl, ...props }) => {
         </h2>
         <div className="row-container">
           <div className="   w-full mb-3">
-            <div className="slider flex whitespace-nowrap  ">
+            <div className="slider flex whitespace-nowrap z-10  ">
               {movies.map((movie) => (
                 <div
                   key={movie.id}
-                  className="mr-2 min-w-m220 xlm:min-w-m100 mdm:min-w-m74 transform hover:scale-105 hover:z-10 "
+                  className="mr-2 min-w-m220 xlm:min-w-m100 mdm:min-w-m74 transform hover:scale-105  "
                 >
                   <img
                     className="bg-no-repeat bg-cover w-full"

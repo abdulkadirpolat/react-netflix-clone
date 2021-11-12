@@ -12,7 +12,7 @@ function Logout() {
   const homeSetTimeout = () => {
     mySetTimeout = setTimeout(() => {
       history.push("/");
-    }, 3000);
+    }, 30000);
   };
   
   const setTimeoutStop = () => {
