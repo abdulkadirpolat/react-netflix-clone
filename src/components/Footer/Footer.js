@@ -23,8 +23,10 @@ const Footer = ({
   const [lang, setLang] = useState("");
 
   function handleChangeLanguage(lang) {
-    if (lang.target.value) setLang(lang.target.value);
+    if (lang.target.value){ 
+      setLang(lang.target.value);
     i18n.changeLanguage(lang.target.value);
+  }
   }
 
   return (
@@ -82,7 +84,7 @@ const Footer = ({
             >
               <select
                 onChange={handleChangeLanguage}
-                value={lang ? lang : "en"}
+                value={lang ? lang : i18n.language}
                 className={`${
                   signUpFooter ? "bg-white" : ""
                 } py-4 pl-12 w-32 bg-black`}

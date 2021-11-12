@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Footer, Header } from "../../components";
 import { useTranslation } from "react-i18next";
 import "./logout.css";
@@ -6,12 +6,31 @@ import { Link, useHistory } from "react-router-dom";
 function Logout() {
   const { t: translate } = useTranslation();
   const history = useHistory();
+  const [user, setUser] = useState(null);
+  var mySetTimeout;
 
-  useEffect(() => {
-    setTimeout(() => {
+  const homeSetTimeout = () => {
+    mySetTimeout = setTimeout(() => {
       history.push("/");
-    }, 30000);
-  });
+    }, 3000);
+  };
+  
+  const setTimeoutStop = () => {
+    clearTimeout(mySetTimeout);
+  };
+  
+  useEffect (() => {
+    homeSetTimeout();
+    return () => {
+      clearTimeout(mySetTimeout);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+  useEffect(() => {
+    setUser(localStorage.getItem("user"));
+  }, [user]);
+
   return (
     <Container className="logout-container">
       <Header>
@@ -31,7 +50,10 @@ function Logout() {
           <p className="my-4">{translate("logout.logout-container.text")}</p>
           <p>{translate("logout.logout-container.text2")}</p>
           <Link to="/">
-            <Button className="primary my-3 text-lg w-full">
+            <Button
+              onClick={setTimeoutStop}
+              className="primary my-3 text-lg w-full"
+            >
               {translate("logout.logout-container.button")}
             </Button>
           </Link>

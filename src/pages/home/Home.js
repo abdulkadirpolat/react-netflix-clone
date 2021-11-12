@@ -8,7 +8,6 @@ import {
   Input,
 } from "../../components";
 import { IoGlobe } from "react-icons/io5";
-// import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 import { Link, useHistory } from "react-router-dom";
@@ -20,7 +19,6 @@ function Home() {
   const history = useHistory();
   const [lang, setLang] = useState("");
   const { t: translate } = useTranslation();
-  // const [actived, setActived] = useState(false);
 
   const {
     register,
@@ -50,7 +48,7 @@ function Home() {
           >
             <select
               onChange={handleChangeLanguage}
-              value={lang ? lang : "en"}
+              value={lang ? lang : i18n.language}
               className={`py-2 smm3:py-1  pl-5 w-24 bg-black`}
             >
               <option value="tr">Türkçe</option>

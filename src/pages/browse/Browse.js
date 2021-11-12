@@ -6,17 +6,21 @@ import {
   Navbar,
   Row,
 } from "../../components/index";
-import { Link } from "react-router-dom";
-import Loading from "../../components/Loading";
+import { Link, useHistory } from "react-router-dom";
+// import Loading from "../../components/Loading";
 import { BiCaretDown } from "react-icons/bi";
 import { FaSearch, FaBell } from "react-icons/fa";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import fetchRequest from "../../fetchRequest";
 import { useTranslation } from "react-i18next";
-
+import { useDispatch } from "react-redux";
+import { logout } from "../../redux/user/userSlice"
 function Browse() {
   // eslint-disable-next-line no-unused-vars
-  const [inLoading, setInLoading] = useState(false);
+  const dispatch = useDispatch()
+
+  const history = useHistory();
+  // const [inLoading, setInLoading] = useState(false);
   const [active, setActive] = useState(false);
   const { t: translate } = useTranslation();
   const handleAccountDropDown = () => {
@@ -26,13 +30,23 @@ function Browse() {
     setActive(false);
   };
 
-  return inLoading ? (
-    <Loading />
-  ) : (
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    dispatch(logout())
+    history.push("/logout");
+  };
+
+  // return inLoading ? (
+  //   <Loading />
+  // ) : 
+ return (
     <Container className="bg-nx-gray-900">
       <Navbar>
         <div className="w-full h-full flex flex-row items-center">
-          <Link to="/" className="lgm:h-h-25 h-5 w-32 flex cursor-pointer mr-1">
+          <Link
+            to="/browse"
+            className="lgm:h-h-25 h-5 w-32 flex cursor-pointer mr-1"
+          >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/799px-Netflix_2015_logo.svg.png"
               alt="Netflix Logo"
@@ -135,19 +149,19 @@ function Browse() {
                       {links}
                     </li>
                   ))}
-                  <Link
+                  <button
                     className="py-1 px-3 hover:underline leading-4"
-                    to="/logout"
+                    onClick={handleLogout}
                   >
                     {translate("browse.navbar.account-card.account2")}
-                  </Link>
+                  </button>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </Navbar>
-      <BillboardAnimation  className="min-h-h4" />
+      <BillboardAnimation className="min-h-h4" />
       <div className="-mt-40">
         <Row
           title="Netflix Orjinals"
